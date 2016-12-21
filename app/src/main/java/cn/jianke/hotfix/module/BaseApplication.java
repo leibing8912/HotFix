@@ -7,8 +7,8 @@ import com.taobao.hotfix.util.PatchStatusCode;
 import cn.jianke.hotfix.BuildConfig;
 
 /**
- * @className:
- * @classDescription:
+ * @className: BaseApplication
+ * @classDescription: 应用实例
  * @author: leibing
  * @createTime: 2016/12/21
  */
