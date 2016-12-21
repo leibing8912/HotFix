@@ -16,12 +16,29 @@ public class BaseApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
-
         // init HotFix
+        initHotFix();
+    }
+
+    /**
+     * init HotFix
+     * @author leibing
+     * @createTime 2016/12/21
+     * @lastModify 2016/12/21
+     * @param
+     * @return
+     */
+    private void initHotFix() {
+        // appVersion（此处为app的版本名称）
+        String appVersion = BuildConfig.VERSION_NAME;
+        // 阿里百川(开发者控制台)->我的产品后台->阿里百川HotFix(需申请权限)->进入即可看到appId
+        String appId = "83318-1";
+        // aesKey(用户自定义aes秘钥,在执行生成patch时需要使用）
+        String aesKey = "1234567891234567";
         HotFixManager.getInstance().setContext(this)
-                .setAppVersion(BuildConfig.VERSION_NAME)
-                .setAppId("83318-1")
-                .setAesKey("1234567891234567")
+                .setAppVersion(appVersion)
+                .setAppId(appId)
+                .setAesKey(aesKey)
                 .setSupportHotpatch(true)
                 .setEnableDebug(false)
                 .setPatchLoadStatusStub(new PatchLoadStatusListener() {
